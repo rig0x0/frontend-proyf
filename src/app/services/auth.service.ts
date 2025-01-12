@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  urlApi = "https://backend-proyf.vercel.app/api/v1/auth";
+  urlApi = "https://backend-proyf.onrender.com/api/v1/auth";
 
   constructor(private httpClient: HttpClient, private router: Router) { }  // Inyección de HttpClient
 
