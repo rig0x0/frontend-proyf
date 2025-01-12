@@ -1,0 +1,64 @@
+<div class="container-fluid p-0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-clock-history me-2"></i>Orders
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/records" routerLinkActive="active">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/creditos" routerLinkActive="active">Créditos</a>
+                    </li>
+                </ul>
+                <div class="d-flex" role="search">
+                    <p class="text-white mt-3 me-4">¡Bienvenido <span class="fw-bolder">{{user}}</span>!</p>
+                    <button class="btn btn-outline-light mt-2 mb-2" type="button" (click)="logout()">Salir</button>
+                    <input class="buscador" type="search" placeholder="Search" aria-label="Search">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body text-center p-4">
+                        <h3 class="card-title fw-bold">Desarrollado por</h3>
+
+                        <img src="/FotoPerfil.jpg" alt="Logo" class="img-fluid rounded-circle border-3" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 18px;">
+
+                        <h5 class="card-text text-muted">
+                            <span class="fw-bold">Rodrigo Emiliano Maldonado de La Cruz</span>
+                        </h5>
+                        <h5 class="card-text text-muted">
+                            <span class="fw-bold">2022670067</span>
+                        </h5>
+                        <h5 class="card-text text-muted">
+                            <span class="fw-bold">rmaldonadod2100&#64;alumno.ipn.mx</span>
+                        </h5>
+
+                        <div class="mt-4 pt-3 border-top border-light">
+                            <p class="text-muted mb-0" style="font-size: 0.9rem;">
+                              © 2025 Todos los derechos reservados
+                            </p>
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

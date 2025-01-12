@@ -1,0 +1,66 @@
+<div class="d-flex align-items-center justify-content-center vh-100">
+  <div class="card shadow-lg p-5" style="width: 400px; border-radius: 15px;">
+    <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error:</strong> {{ errorMessage }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="errorMessage = ''"></button>
+    </div>
+    <h4 class="card-title text-center mb-4">Registro</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="username" class="form-label fw-bolder">Usuario</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="username" 
+          formControlName="username"
+          placeholder="Ingresa tu nombre de usuario"
+          [ngClass]="{ 'is-invalid': username.invalid && username.touched }"
+        />
+        <div *ngIf="username.invalid && username.touched" class="invalid-feedback">
+          El nombre de usuario es obligatorio.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label fw-bolder">Contraseña</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          id="password"
+          formControlName="password"
+          placeholder="Ingresa tu contraseña"
+          [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
+        />
+        <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
+          La contraseña es obligatoria y debe tener al menos 6 caracteres.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password2" class="form-label fw-bolder">Repetir Contraseña</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          id="password2"
+          formControlName="password2"
+          placeholder="Repite tu contraseña"
+          [ngClass]="{ 'is-invalid': loginForm.hasError('passwordsMismatch') && password2.touched }"
+        />
+        <div *ngIf="loginForm.hasError('passwordsMismatch') && password2.touched" class="invalid-feedback">
+          Las contraseñas no coinciden.
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <button type="submit" class="btn btn-outline-success w-100 py-2" style="border-radius: 25px;">
+          Registrarse
+        </button>
+      </div>
+      <div class="text-center mt-3">
+        <a routerLink="/login" class="small text-muted">
+          ¿Ya tienes una cuenta?, <span class="fw-bolder text-success">Iniciar Sesión</span>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

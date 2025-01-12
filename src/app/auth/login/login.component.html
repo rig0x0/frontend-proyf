@@ -1,0 +1,58 @@
+<div class="d-flex align-items-center justify-content-center vh-100">
+  <div class="card shadow-lg p-5" style="width: 400px; border-radius: 15px;">
+    <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error:</strong> {{ errorMessage }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="errorMessage = ''"></button>
+    </div>
+    <h4 class="card-title text-center mb-4">Iniciar Sesión</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Campo Username -->
+      <div class="mb-3">
+        <label for="username" class="form-label fw-bolder">Username</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="username" 
+          formControlName="username"
+          [ngClass]="{ 'is-invalid': username.invalid && username.touched }"
+          placeholder="Ingresa tu username" 
+        />
+        <div *ngIf="username.invalid && username.touched" class="invalid-feedback">
+          El nombre de usuario es obligatorio.
+        </div>
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="mb-3">
+        <label for="password" class="form-label fw-bolder">Contraseña</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          id="password"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
+          placeholder="Ingresa tu Contraseña" 
+        />
+        <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
+          La contraseña es obligatoria.
+        </div>
+      </div>
+
+      <!-- Botón de Enviar -->
+      <div class="mt-4">
+        <button 
+          type="submit" 
+          class="btn btn-outline-success w-100 py-2"
+          style="border-radius: 25px; transition: background-color 0.3s ease;">
+          Ingresar
+        </button>
+      </div>
+
+      <div class="text-center mt-3">
+        <a routerLink="/register" class="small text-muted">
+          ¿Aún no tienes una cuenta?, <span class="fw-bolder text-success">Regístrate</span>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
