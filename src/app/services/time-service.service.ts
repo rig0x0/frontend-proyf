@@ -10,7 +10,7 @@ import { times } from '../data/times-entity';
 })
 export class TimeServiceService {
   // urlApi = "https://ejercicio-10-backend.onrender.com/api/v1/heroes"
-  urlApi = "https://backend-proyf.vercel.app/api/v1/orders"
+  urlApi = "https://backend-proyf.onrender.com/api/v1/orders"
 
   // Inyectamos el cliente http para conectarnos
   constructor( private httpClient: HttpClient) { }
