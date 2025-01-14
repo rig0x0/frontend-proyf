@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://backend-proyf.onrender.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
